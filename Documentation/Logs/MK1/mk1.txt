@@ -1,0 +1,26 @@
+Model:.1
+Data: bare mfccs, not normalised,
+Architecture: 128, 128, 128, 128; l2 regularizers(0.002, 0.03, 0.03, 0.002); DropOut(0.02). 
+Results: 61% validation, 77% training
+Conclusion/Recommendations: Overfitting, check problematic samples.
+
+
+Model : .2
+Data: Arrays with k-fold validation
+Architecture: Similar architecture to .1
+Results: 78% validation, 85-90% training
+
+Model : .3
+Data: removed soprano soubrette and soprano spinto
+Architecture: 128, 256, 256, 128; l2 regularizers(0.0
+
+model: .4
+data: male only, standardised, shuffled
+architecture: 128, 80, 80; dropout: 0.4, regularizers l2; 0.09
+results = 70% validation(k-fold), 83-85% highest training
+recommendation: more data.
+
+
+
+
+

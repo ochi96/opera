@@ -1,0 +1,57 @@
+dataset: everything except ['mezzosoprano coloratura','soprano soubrette', 'soprano coloratura', 'soprano lyric'];
+
+input schema: (1742, 32).....(32 pca components)
+
+categories: 6
+
+architecture: (smaller architecture)
+Layer1 units: 176
+Layer1 dropout: 0.21999999999999995
+Layer2 units: 144
+Layer2 dropout: 0.15999999999999998
+Layer3 units: 108
+Layer3 dropout: 0.3899999999999999
+Layer4 units: 152
+Layer4 dropout: 0.13999999999999999
+Layer5 units: 188
+
+
+Model: "sequential_6"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 176)               5808      
+                                                                 
+ dropout_24 (Dropout)        (None, 176)               0         
+                                                                 
+ dense_2 (Dense)             (None, 144)               25488     
+                                                                 
+ dropout_25 (Dropout)        (None, 144)               0         
+                                                                 
+ dense_3 (Dense)             (None, 108)               15660     
+                                                                 
+ dropout_26 (Dropout)        (None, 108)               0         
+                                                                 
+ dense_4 (Dense)             (None, 152)               16568     
+                                                                 
+ dropout_27 (Dropout)        (None, 152)               0         
+                                                                 
+ dense_5 (Dense)             (None, 188)               28764     
+                                                                 
+ dense_6 (Dense)             (None, 6)                 1134      
+                                                                 
+=================================================================
+Total params: 93,422
+Trainable params: 93,422
+Non-trainable params: 0
+
+
+Results:
+Test Loss:  1.449644923210144
+Test Accuracy:  0.7447916865348816
+
+Precision:  0.7266514208675395
+Recall:     0.7310957239866777
+F_score:    0.7284153514563773
+
+Recommendation/Insights: ???

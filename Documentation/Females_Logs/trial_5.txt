@@ -1,0 +1,71 @@
+dataset: everything except ['mezzosoprano coloratura','soprano lyric', 'soprano coloratura', 'soprano soubrette', 'soprano spinto'];
+
+input schema: (1438, 32)
+
+data_dist:
+x_train:  1113
+y_train:  1113
+x_test:  173
+y_test:  173
+x_dev:  152
+y_dev:  152
+
+categories: 5
+
+architecture: 
+Model: "sequential_8"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 120)               3960      
+                                                                 
+ dropout_24 (Dropout)        (None, 120)               0         
+                                                                 
+ dense_2 (Dense)             (None, 184)               22264     
+                                                                 
+ dense_3 (Dense)             (None, 244)               45140     
+                                                                 
+ dropout_25 (Dropout)        (None, 244)               0         
+                                                                 
+ dense_4 (Dense)             (None, 124)               30380     
+                                                                 
+ dropout_26 (Dropout)        (None, 124)               0         
+                                                                 
+ dense_5 (Dense)             (None, 148)               18500     
+                                                                 
+ dense_8 (Dense)             (None, 5)                 745       
+                                                                 
+=================================================================
+Total params: 120,989
+Trainable params: 120,989
+Non-trainable params: 0
+
+Best_hps:
+Layer1 units: 120
+Layer1 dropout: 0.5899999999999997
+Layer2 units: 184
+Layer2 l2 regularizer: 0.002
+Layer3 units: 244
+Layer3 dropout: 0.2040000000000001
+Layer4 units: 124
+Layer4 dropout: 0.2899999999999999
+Layer5 units: 148
+
+
+Results:
+Trial 59 Complete [00h 00m 06s]
+val_accuracy: 0.6776315569877625
+
+Best val_accuracy So Far: 0.7171052694320679
+Total elapsed time: 00h 02m 55s
+
+
+Test Loss:  0.9697787761688232
+Test Accuracy:  0.8092485666275024
+
+Precision:  0.8074017684543999
+Recall:     0.8045975035425522
+F_score:    0.802707035275113
+
+Recommendations/insights: ?????
+

@@ -1,0 +1,58 @@
+dataset: everything except all soprano subregisters;
+
+input schema: (1619, 24).....(24 pca components)
+
+test accuracy: 0.75
+
+categories: 6
+
+architecture: (smaller architecture)
+Layer1 units: 136
+Layer1 dropout: 0.2599999999999999
+Layer2 units: 76
+Layer2 dropout: 0.30999999999999994
+Layer3 units: 244
+Layer3 dropout: 0.44999999999999984
+Layer4 units: 192
+
+
+Model: "sequential_9"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 136)               3400      
+                                                                 
+ dropout_36 (Dropout)        (None, 136)               0         
+                                                                 
+ dense_2 (Dense)             (None, 76)                10412     
+                                                                 
+ dropout_37 (Dropout)        (None, 76)                0         
+                                                                 
+ dense_3 (Dense)             (None, 244)               18788     
+                                                                 
+ dropout_38 (Dropout)        (None, 244)               0         
+                                                                 
+ dense_4 (Dense)             (None, 192)               47040     
+                                                                 
+ dropout_39 (Dropout)        (None, 192)               0         
+                                                                 
+ dense_5 (Dense)             (None, 36)                6948      
+                                                                 
+ dense_9 (Dense)             (None, 6)                 222       
+                                                                 
+=================================================================
+Total params: 86,810
+Trainable params: 86,810
+Non-trainable params: 0
+
+
+Results:
+Test Loss:  0.833284318447113
+Test Accuracy:  0.748603343963623
+
+Precision:  0.7423860748002905
+Recall:     0.7424723424723424
+F_score:    0.7393876354348867
+
+Recommendation/Insights: Sopranos subcategories have very small variance between them. Solution is to create more and clearer data points. 
+Also work on adding them singularly to see the effect on model.

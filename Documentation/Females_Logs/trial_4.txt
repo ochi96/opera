@@ -1,0 +1,56 @@
+dataset: everything except ['mezzosoprano coloratura','soprano soubrette', 'soprano coloratura', 'soprano lyric'];
+
+input schema: (1742, 32).....(32 pca components)
+
+categories: 6
+
+architecture: (smaller architecture)
+Layer1 units: 172
+Layer1 dropout: 0.32999999999999985
+Layer2 units: 172
+Layer2 dropout: 0.45999999999999985
+Layer3 units: 172
+Layer3 dropout: 0.22999999999999995
+Layer4 units: 196
+
+
+Model: "sequential_7"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 172)               7052      
+                                                                 
+ dropout_21 (Dropout)        (None, 172)               0         
+                                                                 
+ dense_2 (Dense)             (None, 172)               29756     
+                                                                 
+ dropout_22 (Dropout)        (None, 172)               0         
+                                                                 
+ dense_3 (Dense)             (None, 172)               29756     
+                                                                 
+ dropout_23 (Dropout)        (None, 172)               0         
+                                                                 
+ dense_4 (Dense)             (None, 196)               33908     
+                                                                 
+ dense_7 (Dense)             (None, 6)                 1182      
+                                                                 
+=================================================================
+Total params: 101,654
+Trainable params: 101,654
+Non-trainable params: 0
+_________________________________________________________________
+
+
+
+Results:
+Test Loss:  1.0144951343536377
+Test Accuracy:  0.7708333134651184
+
+Precision:  0.7621070450017818
+Recall:     0.7648005537297733
+
+F_score:    0.7529836730396641
+
+Recommendation/Insights: steps per epoch and number of epochs greatly affect accuracy. Changed monitoring item from "val_loss" to "val_accuracy". Vary till test accuracy>=0.8 for 6-8 subcategories
+
+

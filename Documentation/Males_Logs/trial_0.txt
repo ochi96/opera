@@ -1,0 +1,39 @@
+dataset: everything except ['baritone_lyric'];
+
+input schema: (3427, 32).....(32 pca components)
+
+categories: 8
+
+
+Model: "sequential_5"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 188)               6204      
+                                                                 
+ dense_2 (Dense)             (None, 144)               27216     
+                                                                 
+ dense_3 (Dense)             (None, 188)               27260     
+                                                                 
+ dense_4 (Dense)             (None, 168)               31752     
+                                                                 
+ dense_5 (Dense)             (None, 8)                 1352      
+                                                                 
+=================================================================
+Total params: 93,784
+Trainable params: 93,784
+Non-trainable params: 0
+_________________________________________________________________
+
+
+Results:
+Test Loss:  2.8011226654052734
+Test Accuracy:  0.6917475461959839
+
+Precision:  0.6934336053337067
+Recall:     0.6944329753777692
+F_score:    0.6921958629960512
+
+Recommendation/Insights: ??
+
+

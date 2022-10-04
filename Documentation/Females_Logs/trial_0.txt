@@ -1,0 +1,44 @@
+Initial tests on the full dataset
+
+accuracy: ~0.68
+categories: 10
+
+architecture:
+Model: "sequential_6"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 368)               12144     
+                                                                 
+ dropout_24 (Dropout)        (None, 368)               0         
+                                                                 
+ dense_2 (Dense)             (None, 688)               253872    
+                                                                 
+ dropout_25 (Dropout)        (None, 688)               0         
+                                                                 
+ dense_3 (Dense)             (None, 376)               259064    
+                                                                 
+ dropout_26 (Dropout)        (None, 376)               0         
+                                                                 
+ dense_4 (Dense)             (None, 664)               250328    
+                                                                 
+ dropout_27 (Dropout)        (None, 664)               0         
+                                                                 
+ dense_5 (Dense)             (None, 384)               255360    
+                                                                 
+ dense_6 (Dense)             (None, 10)                3850      
+                                                                 
+=================================================================
+Total params: 1,034,618
+Trainable params: 1,034,618
+Non-trainable params: 0
+
+Results:
+Test Loss:  1.3351272344589233
+Test Accuracy:  0.6723549365997314
+
+Precision:  0.6591079472329473
+Recall:     0.6730311513690836
+F_score:    0.6515104892035589
+
+Recommendation: test without soprano spinto, mezzo coloratura, contraltos, soprano soubrette or combinations thereof

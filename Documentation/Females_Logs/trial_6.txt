@@ -1,0 +1,72 @@
+dataset: everything except sopranos;
+
+input schema: (1385, 40)
+data_dist:
+x_train:  1071
+y_train:  1071
+x_test:  167
+y_test:  167
+x_dev:  147
+y_dev:  147
+
+categories: 5
+
+architecture: 
+Model: "sequential_6"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 184)               7544      
+                                                                 
+ dropout_24 (Dropout)        (None, 184)               0         
+                                                                 
+ dense_2 (Dense)             (None, 232)               42920     
+                                                                 
+ dropout_25 (Dropout)        (None, 232)               0         
+                                                                 
+ dense_3 (Dense)             (None, 160)               37280     
+                                                                 
+ dropout_26 (Dropout)        (None, 160)               0         
+                                                                 
+ dense_4 (Dense)             (None, 244)               39284     
+                                                                 
+ dropout_27 (Dropout)        (None, 244)               0         
+                                                                 
+ dense_5 (Dense)             (None, 136)               33320     
+                                                                 
+ dense_6 (Dense)             (None, 5)                 685       
+                                                                 
+=================================================================
+Total params: 161,033
+Trainable params: 161,033
+Non-trainable params: 0
+_________________________________________________________________
+
+Layer1 units: 184
+Layer1 dropout: 0.24999999999999992
+Layer2 units: 232
+Layer2 dropout: 0.23999999999999994
+Layer3 units: 160
+Layer3 dropout: 0.30800000000000016
+Layer4 units: 244
+Layer4 dropout: 0.5799999999999997
+Layer5 units: 136
+
+
+Results:
+Trial 59 Complete [00h 00m 11s]
+val_accuracy: 0.7006802558898926
+
+Best val_accuracy So Far: 0.8163265585899353
+Total elapsed time: 00h 02m 55s
+
+
+Test Loss:  0.6423435211181641
+Test Accuracy:  0.832335352897644
+
+Precision:  0.8201009474323678
+Recall:     0.8310894354372614
+F_score:    0.8229083281960774
+
+Recommendations/insights: Remove all sopranos!
+

@@ -1,0 +1,73 @@
+dataset: everything except ['tenor_leggero', 'bass_cantante', 'baritone_lyric', 'tenor_spinto'];
+
+input schema: (2124, 32)
+
+data_dist:
+x_train:  1644
+y_train:  1644
+x_test:  255
+y_test:  255
+x_dev:  225
+y_dev:  225
+
+categories: 5
+
+architecture: 
+Model: "sequential_8"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 256)               8448      
+                                                                 
+ dropout_24 (Dropout)        (None, 256)               0         
+                                                                 
+ dense_2 (Dense)             (None, 160)               41120     
+                                                                 
+ dropout_25 (Dropout)        (None, 160)               0         
+                                                                 
+ dense_3 (Dense)             (None, 172)               27692     
+                                                                 
+ dropout_26 (Dropout)        (None, 172)               0         
+                                                                 
+ dense_4 (Dense)             (None, 192)               33216     
+                                                                 
+ dense_8 (Dense)             (None, 5)                 965       
+                                                                 
+=================================================================
+Total params: 111,441
+Trainable params: 111,441
+Non-trainable params: 0
+
+Best_hps:
+Layer1 units: 256
+Layer1 l2 regularizer: 0.002
+Layer1 dropout: 0.30300000000000016
+Layer2 units: 160
+Layer2 l2 regularizer: 0.01999999999999999
+Layer2 dropout: 0.40800000000000025
+Layer3 units: 172
+Layer3 l2 regularizer: 0.011
+Layer3 dropout: 0.4590000000000003
+Layer4 units: 192
+
+
+Results:
+
+Trial 90 Complete [00h 00m 07s]
+val_accuracy: 0.5199999809265137
+
+Best val_accuracy So Far: 0.8444444537162781
+Total elapsed time: 00h 03m 56s
+INFO:tensorflow:Oracle triggered exit
+
+
+Test Loss:  0.5870622396469116
+Test Accuracy:  0.8823529481887817
+
+Precision:  0.8856404901141743
+Recall:     0.8758310684230077
+F_score:    0.8769352939866923
+
+Recommendation/Insights: reduce steps per epoch, reduce drop out fator from 0.1 to 0.001.
+
+

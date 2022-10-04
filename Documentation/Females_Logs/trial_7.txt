@@ -1,0 +1,62 @@
+dataset: sopranos only;
+
+input schema: (1385, 30)
+data_dist:
+x_train:  1071
+y_train:  1071
+x_test:  167
+y_test:  167
+x_dev:  147
+y_dev:  147
+
+categories: 5
+
+architecture: 
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 260)               8060      
+                                                                 
+ dropout_8 (Dropout)         (None, 260)               0         
+                                                                 
+ dense_2 (Dense)             (None, 280)               73080     
+                                                                 
+ dropout_9 (Dropout)         (None, 280)               0         
+                                                                 
+ dense_5 (Dense)             (None, 272)               76432     
+                                                                 
+ dense_4 (Dense)             (None, 5)                 1365      
+                                                                 
+=================================================================
+Total params: 158,937
+Trainable params: 158,937
+Non-trainable params: 0
+
+Layer1 units: 260
+Layer1 dropout: 0.22600000000000012
+Layer2 units: 280
+Layer2 dropout: 0.30500000000000016
+Layer5 units: 272
+
+
+Results:
+Trial 44 Complete [00h 00m 06s]
+val_accuracy: 0.8367347121238708
+
+Best val_accuracy So Far: 0.8503401279449463
+Total elapsed time: 00h 02m 00s
+INFO:tensorflow:Oracle triggered exit
+
+
+Test Loss:  1.1330255270004272
+Test Accuracy:  0.8443113565444946
+
+Precision:  0.832756214861478
+Recall:     0.8457507507507508
+F_score:    0.8347252747252748
+
+
+
+Recommendations/insights: less layers. two worked!
+

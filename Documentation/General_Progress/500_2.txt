@@ -1,0 +1,74 @@
+=========================================================================Model_2=====================================================
+metadata:
+data: male only, 500 each
+except: tenor lyric and baritone dramatic
+methods: pca, keras tuner 
+
+x_train:  2570
+y_train:  2570
+x_test:  325
+y_test:  325
+x_dev:  351
+y_dev:  351
+
+Trial 30 Complete [00h 00m 21s]
+val_accuracy: 0.6951566934585571
+
+Best val_accuracy So Far: 0.7264957427978516
+Total elapsed time: 00h 05m 52s
+INFO:tensorflow:Oracle triggered exit
+
+hyperparameters:
+Layer1 units: 560
+Layer1 dropout: 0.5199999999999998
+Layer2 units: 816
+Layer2 dropout: 0.4999999999999998
+Layer3 units: 704
+Layer3 dropout: 0.6099999999999998
+Layer4 units: 816
+Layer4 dropout: 0.48999999999999977
+
+h_model.summary():
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 560)               22960     
+_________________________________________________________________
+dropout (Dropout)            (None, 560)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 816)               457776    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 816)               0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 704)               575168    
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 704)               0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 816)               575280    
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 816)               0         
+_________________________________________________________________
+dense (Dense)                (None, 7)                 5719      
+=================================================================
+Total params: 1,636,903
+Trainable params: 1,636,903
+Non-trainable params: 0
+
+11/11 [==============================] - 0s 6ms/step - loss: 0.8112 - accuracy: 0.8123
+Test Loss:  0.8112453818321228
+Test Accuracy:  0.8123077154159546
+
+Precision:  0.8119737937463871
+Recall:     0.8143523978760098
+F_score:    0.8117715115806164
+
+
+Recommendation: By removing tenor lyric and baritone dramatic, accuracy gets to above 0.81. Overfitting is still a problem but greatly reduced. 
+Those categories wrongly classified are to be investigated(listened to) to determine the source of error.
+Start looking for the combination with the highest number of considered categories that give accuracies more than ~0.85
+
+
+
+
+

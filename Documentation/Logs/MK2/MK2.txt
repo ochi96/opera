@@ -1,0 +1,177 @@
+
+OVERVIEW 
+
+Metadata:
+Data: Male only, ~200 each
+Methods: keras tuner and transfer learning
+
+
+===================================================================MODEL 1==============================================================
+Data: all categories, data frac=(test_size=0.15,dev_size=0.15)
+
+Trial 30 Complete [00h 00m 04s]
+val_accuracy: 0.637499988079071
+
+Best val_accuracy So Far: 0.637499988079071
+Total elapsed time: 00h 01m 15s
+
+hyperparemeters:
+
+Layer1 units: 416
+Layer1 dropout: 0.29999999999999993
+Layer2 units: 256
+Layer2 dropout: 0.14999999999999997
+Learning Rate: 0.001
+
+
+h_model.summary()
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 416)               53664     
+_________________________________________________________________
+dropout (Dropout)            (None, 416)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 256)               106752    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense (Dense)                (None, 9)                 2313      
+=================================================================
+Total params: 162,729
+Trainable params: 162,729
+Non-trainable params: 0
+
+
+Test Loss:  2.2246644496917725
+Test Accuracy:  0.6595744490623474
+
+Precision:  0.6626250130983298
+Recall:     0.6607050783137739
+F_score:    0.6531190297333332
+
+
+RECOMMENDATION/INSIGHT: Accuracy is genuine as shown by balanced Precision, Recall and F_score.
+With only 150 samples per category, this model has potential to get to 0.9 with at least 5x more samples per category.
+
+Since that is an expensive endeavour, this week is committed to adding more features other than mfccs to see how far the model furthur 
+improves
+
+==============================================================MODEL 2===================================================================
+Bigger Model, more data:(0.08 each for validation and test set)
+Data: all male categories,
+x_train:  1521
+y_train:  1521
+x_test:  188
+y_test:  188
+x_dev:  169
+y_dev:  169
+
+Trial 90 Complete [00h 00m 09s]
+val_accuracy: 0.5207100510597229
+
+Best val_accuracy So Far: 0.6863905191421509âœ”
+Total elapsed time: 00h 04m 11s
+INFO:tensorflow:Oracle triggered exit
+
+Hyperparameters:
+Layer1 units: 624
+Layer1 dropout: 0.1
+Layer2 units: 320
+Layer2 dropout: 0.18999999999999995
+Learning Rate: 0.001
+
+h_model.summary():
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 624)               80496     
+_________________________________________________________________
+dropout (Dropout)            (None, 624)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 320)               200000    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 320)               0         
+_________________________________________________________________
+dense (Dense)                (None, 9)                 2889      
+=================================================================
+Total params: 283,385
+Trainable params: 283,385
+Non-trainable params: 0
+
+Test Loss:  1.8541444540023804
+Test Accuracy:  0.6914893388748169
+
+Precision:  0.6956528013049752
+Recall:     0.6892939526335676
+F_score:    0.6854560231966604
+
+RECOMMENDATION/INSIGHT: The model added 3% in accuracy just by adding 4% more data to the training set. This shows the model is data hungry. Same is observed when performing k-fold validation with higher k values compared to lower ones.
+
+
+
+=======================================================================M0DEL 3==========================================================
+Data: removed 'Baritones_BassBaritones'
+
+x_train:  1322
+y_train:  1322
+x_test:  184
+y_test:  184
+x_dev:  164
+y_dev:  164
+
+hyperparameters:
+Layer1 units: 336
+Layer1 dropout: 0.6099999999999998
+Layer2 units: 472
+Layer2 dropout: 0.20999999999999996
+Learning Rate: 0.001
+
+h_model.summary():
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 336)               43344     
+_________________________________________________________________
+dropout (Dropout)            (None, 336)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 472)               159064    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 472)               0         
+_________________________________________________________________
+dense (Dense)                (None, 8)                 3784      
+=================================================================
+Total params: 206,192
+Trainable params: 206,192
+Non-trainable params: 0
+
+Test Loss:  1.5415523052215576
+Test Accuracy:  0.695652186870575
+
+Precision:  0.7034250801564724
+Recall:     0.6934793668489321
+F_score:    0.6914035714050321
+
+
+RECOMMENDATION/INSIGHT: Even among the male only dataset, there are problematic classes that when removed, the model improves. The baritones are particulary stubborn. Removing them leads to 0.75 accuracy. This will be solved with more data eventually.
+
+
+
+KERAS TUNER: Very helpful in reducing design time and will continue to be used
+Transfer Learning: Quite problematic at the moment due to the poor mfccs(B/W not colored). This method should be promising. Perhaps streamlining the feature engineering will lead to much better results.
+
+
+Next Week: New features + Feature Engineering + Transfer Learning(continued)
+
+
+
+
+
+
+
+
+
+

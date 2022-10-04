@@ -1,0 +1,55 @@
+dataset: everything except ['soprano soubrette', 'soprano coloratura', 'soprano lyric'];
+
+input schema: (1923, 30).....(30 pca components)
+
+categories: 7
+
+architecture: (smaller architecture)
+Layer1 units: 176
+Layer1 dropout: 0.3999999999999998
+Layer2 units: 152
+Layer2 dropout: 0.3899999999999999
+Layer3 units: 96
+Layer3 dropout: 0.2699999999999999
+Layer4 units: 216
+
+
+Model: "sequential_6"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 176)               5456      
+                                                                 
+ dropout_24 (Dropout)        (None, 176)               0         
+                                                                 
+ dense_2 (Dense)             (None, 152)               26904     
+                                                                 
+ dropout_25 (Dropout)        (None, 152)               0         
+                                                                 
+ dense_3 (Dense)             (None, 96)                14688     
+                                                                 
+ dropout_26 (Dropout)        (None, 96)                0         
+                                                                 
+ dense_4 (Dense)             (None, 216)               20952     
+                                                                 
+ dropout_27 (Dropout)        (None, 216)               0         
+                                                                 
+ dense_5 (Dense)             (None, 184)               39928     
+                                                                 
+ dense_6 (Dense)             (None, 7)                 1295      
+                                                                 
+=================================================================
+Total params: 109,223
+Trainable params: 109,223
+Non-trainable params: 0
+
+
+Results:
+Test Loss:  1.219814658164978
+Test Accuracy:  0.7169811129570007
+
+Precision:  0.708468714107812
+Recall:     0.7036244310728476
+F_score:    0.7037249020574396
+
+Recommendation/Insights: Sopranos spinto is not as problematic as previously thought
